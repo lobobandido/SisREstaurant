@@ -42,15 +42,43 @@ const verPedido = () => {
 
 // Función para finalizar el pedido
 const finalizarPedido = () => {
-    pedido = []; // Vaciar el pedido
+    if (pedido.length === 0) {
+        alert('El pedido está vacío. No se puede finalizar.');
+        return;
+    }
+
+    calcularCosto();
     document.getElementById('pedido').innerHTML = '<h2>Pedido Actual</h2><p>El pedido ha sido finalizado.</p>';
 }
 
-// Función para pagar el pedido
+//* Función para pagar el pedido
 const pagarPedido = () => {
-    let total = 0;
-    for(let producto of pedido) {
-        total += producto.costo;
+    if (pedido.length === 0) {
+        alert('El pedido está vacío. No se puede pagar.');
+        return;
     }
-    alert(`El total a pagar es: $${total}`);
-  }
+
+    let total = calcularCosto();
+
+    let montoEntregado = prompt(`El total a pagar es: $${total}. Ingrese el monto entregado:`);
+    montoEntregado = parseFloat(montoEntregado);
+
+    if (isNaN(montoEntregado) || montoEntregado < total) {
+        alert('Monto inválido. El pago no se ha realizado.');
+    } else {
+        let cambio = montoEntregado - total;
+        alert(`Gracias por su pago. Su cambio es: $${cambio.toFixed(2)}`);
+        // Limpiar el pedido y el mensaje
+        pedido = [];
+        document.getElementById('pedido').innerHTML = '';
+    }
+}
+
+// Función para calcular el costo total del pedido
+const calcularCosto = () => {
+    let costo = 0;
+    for (let producto of pedido) {
+        costo += producto.costo;
+    }
+    return costo;
+}
