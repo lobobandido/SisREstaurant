@@ -3,58 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Normalize CSS -->
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="/styles.css">
+    <!-- JAM icons -->
+    <link rel="stylesheet" href="https://unpkg.com/jam-icons/css/jam.min.css">
     <title>Atención Restaurante</title>
     <style>
-        /* Estilos CSS para la interfaz gráfica */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        button {
-            display: block;
-            margin: 10px auto;
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        #menu {
-            margin-bottom: 20px;
-        }
-        #menu ul {
-            list-style: none;
-            padding: 0;
-        }
-        #menu ul li {
-            margin-bottom: 5px;
-        }
+        
     </style>
     <!-- AQUIE VINCULAMOS EL ARCHIVO DEL MENU (productos.js)
        conn esto aseguramos que cargara primero el menu -->
     <script src="productos.js"></script>
+    <script src="/menu_cabecera.js"></script>
 </head>
 <body>
+    <!-- Cabecera (Logo y menú de navegación) -->
+  <header class="main-header">
+    <div class="content-wrapper">
+      <a href="/">
+        <img src="/logo3 - copia.png" class="logo" alt="Logo DREAMSOFT">
+      </a>
+      <span id="open-menu-button" class="jam jam-menu"></span>  
+      <nav id="main-menu" class="main-menu">
+        <span id="close-menu-button" class="jam jam-close"></span>
+        <ul>
+          <li>
+            <a href="/">Inicio</a>
+          </li>
+          <li>
+            <a href="/quienes-somos">¿Quiénes somos?</a>
+          </li>
+          <li>
+            <a href="/productos">Productos</a>
+          </li>
+          <li>
+            <a href="/contacto">Contacto</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
     <div class="container">
         <h1>Atención Restaurante</h1>
         <div id="menu">
@@ -70,8 +60,15 @@
             <!-- Aquí se mostrará el pedido actual -->
         </div>
     </div>
-
     <!-- <script src="productos.js"></script> -->
     <script src="index.js"></script>
+
+    <script src="/menu_cabecera.js"></script>
+   
+    <footer class="main-footer">
+        <p>Todos los derechos reservados © 2023 | Wolfsoft Adolfo Antonio Ramírez agency</p>
+      </footer>
+    
+     
 </body>
 </html>
