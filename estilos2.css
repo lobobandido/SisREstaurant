@@ -189,6 +189,7 @@ h4 {
   color           : var(--white-color);
   background      : var(--color);
   border          : 1px solid var(--color);
+  box-shadow: 0 5px 5px 5px rgba(185, 94, 220, 0.751);
 }
 
 .button:hover {
