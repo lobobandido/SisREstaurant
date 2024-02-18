@@ -204,6 +204,20 @@ h4 {
     transition: background-color 0.3s;
 }
 
+.button3 {    
+  flex-direction: column;    
+  display: flex;   
+  margin: 10px auto;
+  padding: 10px 20px;     
+  font-size: 16px;     
+  background-color: #007bff;     
+  color: #fff;     
+  border: none;     
+  border-radius: 5px;     
+  cursor: pointer;     
+  transition: background-color 0.3s; }
+
+
 .button:hover {
   background : var(--color-alt);
 }
@@ -237,7 +251,7 @@ h4 {
   height     : var(--header-height);
   width      : 100%;
   background : var(--white-color);
-  box-shadow : 0 3px 5px rgba(125, 210, 246, 0.1);
+  box-shadow : 0 3px 5px rgba(46, 28, 235, 0.966);
   z-index    : var(--z-fixed);
 }
 
@@ -257,7 +271,7 @@ h4 {
 @media screen and (min-width: 1024px) {
 
   .main-header img {
-    height : 3.5rem;
+    height : 3rem;
   }
 
 }
@@ -912,4 +926,46 @@ h4 {
 .animacion-letras span {
   animation: aparecerLetras 5s forwards infinite;
   display: inline-block;
+}
+
+
+
+
+@media screen and (min-width: 780px) {
+
+  .main-menu {
+    margin-left : auto;
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+
+  .main-menu {
+    position        : fixed;
+    top             : 0;
+    left            : 0;
+    width           : 100%;
+    height          : 100vh;
+    background      : var(--white-color);
+    z-index         : var(--z-off-canvas);
+    transform       : scale(0);
+    transition      : transform 0.25s;
+    will-change     : transform;
+
+
+
+    flex-direction: column;    
+    display: flex;   
+    margin: 10px auto;
+    padding: 10px 20px;     
+    font-size: 16px;     
+    background-color: #007bff;     
+    color: #fff;     
+    border: none;     
+    border-radius: 5px;     
+    cursor: pointer;     
+    transition: background-color 0.3s; 
+
+  }
 }
